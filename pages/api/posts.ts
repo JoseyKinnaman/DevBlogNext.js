@@ -18,7 +18,7 @@ const readPostsInfo = ()=> {
   const dirPathToRead = path.join(process.cwd(), 'posts')
   const dirs = fs.readdirSync(dirPathToRead)
   const data = dirs.map((filename) => {
-    const filePathToRead = path.join(process.cwd(), "posts/" + filename);
+  const filePathToRead = path.join(process.cwd(), "posts/" + filename);
     const fileContent = fs.readFileSync(filePathToRead, {encoding: "utf-8"});
     return(matter(fileContent).data);
   });
